@@ -1,0 +1,7 @@
+{% extends "layout.html" %}
+{% block title %}Defaulter{% endblock %}
+{%block content %}
+Course: {{course}}
+<a class="link-success" href="/defaulters/download">Download excel file</a>
+{{df_html|safe}}
+{% endblock %}
