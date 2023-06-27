@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block title %}ST Aloysius College{% endblock %}
+{%block content %}
+<form action="/" method="post" enctype="multipart/form-data">
+  <div class="mb-3">
+    <label for="year" class="form-label">Enter Year</label>
+    <input placeholder="Eg: 2022, 2023" autocomplete="off" pattern="(19|20)\d\d" class="form-control w-25 mb-2"
+      type="text" name="year" id="year" required>
+    <label for="formFile" class="form-label">Upload Excel file here</label>
+    <input class="form-control w-25" type="file" id="formFile" name="data" required>
+  </div>
+  <button class="btn btn-secondary">Submit</button>
+</form>
+{% if data_table %}
+{{ data_table|safe }}
+{{ transaction_table|safe }}
+{% endif %}
+{% endblock %}
